@@ -134,15 +134,15 @@ function fizzBuzz(num) {
    // Si "num" es divisible entre 3 y 5 (ambos), retorna "fizzbuzz".
    // De lo contrario, retorna false.
    // Tu código:
-   if (num%3==0){
-      return 'fizz';
-   } else if(num%5==0){
-      return 'buzz';
-   } else if(num %3===0 && num%5===0){
-      return 'fizzbuzz';
-   } else {
+   if (num % 3 === 0 && num % 5 === 0) {
+      return "fizzbuzz";
+    } else if (num % 3 === 0) {
+      return "fizz";
+    } else if (num % 5 === 0) {
+      return "buzz";
+    } else {
       return false;
-   }
+    }
 }
 
 function operadoresLogicos(num1, num2, num3) {
@@ -179,10 +179,9 @@ function esPrimo(num) {
    // Tu código:
    if (num%num==0 && (num!=0 || num!=1)){
       return true;
-   } else {
-      return false;
+   } 
    }
-      }
+      
    
 
 
@@ -190,11 +189,15 @@ function esVerdadero(valor) {
    // Si "valor" es verdadero retornar "Soy verdadero".
    // Caso contrario, retornar "Soy falso".
    // Tu código:
-   if (valor=true){
-      return "Soy verdadero";
-   } else {
-      return "Soy falso";
-   }
+  if (valor=true) {
+   return 'Soy verdadero';
+   
+  } else if (valor=false) {
+   
+      return 'Soy falso';
+   
+   
+  }
    }
    
 
@@ -215,14 +218,12 @@ function doWhile(num) {
    // Retornar el valor final.
    // Utilizar el bucle Do-While.
    // Tu código:
-   let cuenta=0
-   do{ 
-      num= num+5
-      cuenta= cuenta+1}
-      while(cuenta===8) ;
-         
-     
-   
+   let i = 1;
+  do {
+   num += 5;
+    i++;
+  } while (i <= 8 && num <= 40);
+  return num;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/

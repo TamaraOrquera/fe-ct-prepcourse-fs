@@ -56,12 +56,11 @@ function arrayContiene(array, elemento) {
    // Verifica si el elemento existe dentro del arreglo recibido.
    // Retornar true si está, o false si no está.
    // Tu código:
-   var contieneArray= array.includes(elemento);
-   if (contieneArray= true){
-      return true;
-   } else {
-      return false;
-   }
+  if (array.includes(elemento)) {
+   return true;
+  } else {
+   return false;
+  }
    }
 
 function agregarNumeros(arrayOfNums) {
@@ -98,11 +97,32 @@ function multiplicarArgumentos() {
    // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
    // [PISTA]: "arguments" es un arreglo.
    // Tu código:
+   if (arguments.length===0){
+      return 0;
+   } else if (arguments.length===1) {
+      return arguments[0];
+      
+   } else {
+      var producto=1
+      for (let i = 0; i < arguments.length; i++) {
+         producto *=  arguments[i];
+         
+      }
+      return producto;
+   }
+
 }
 
 function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
    // Tu código:
+   mayoresa=0
+   for (let i = 0; i < array.length; i++) {
+      if (array[i]>18) {
+         mayoresa++;
+      };
+   }
+   return mayoresa;
 }
 
 function diaDeLaSemana(numeroDeDia) {
@@ -110,37 +130,81 @@ function diaDeLaSemana(numeroDeDia) {
    // Realiza una función que, dado el número del día de la semana, retorne: "Es fin de semana"
    // si el día corresponde a "Sábado" o "Domingo", y "Es dia laboral" en caso contrario.
    // Tu código:
+   if (numeroDeDia===7 || numeroDeDia===1) {
+      return 'Es fin de semana'
+      
+   } else {
+      return 'Es dia laboral'
+      
+   }
 }
 
 function empiezaConNueve(num) {
    // Esta función recibe por parámetro un número.
    // Debe retornar true si el entero inicia con 9 y false en otro caso.
    // Tu código:
+   var string= num.toString();
+   return string.startsWith('9');
 }
 
 function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:
+for (let i = 0;i < array.length;i++) {
+   if (array[i]!== array[0]) {
+      return false;
+   }
 }
+   return true;
+}
+
 
 function mesesDelAño(array) {
    // El arreglo contiene algunos meses del año desordenados. Debes recorrerlo, buscar los meses "Enero",
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
+   var mesesPedidos= ['Enero', 'Marzo', 'Noviembre']
+   var mesesEncontrados= []
+   for (let i = 0; i < array.length; i++) {
+      if (mesesPedidos.includes(array[i])) {
+         mesesEncontrados.push(array[i]);
+      }
+      
+   }
+   if (mesesEncontrados.length===3) {
+      return mesesEncontrados;
+      
+   } else{
+      return "No se encontraron los meses pedidos";
+   }
 }
 
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
+   var tabla= [];
+   for (let i = 0; i <= 10; i++) {
+      resultado= 6*[i];
+      tabla.push(resultado); 
+   }
+   return tabla;
+
 }
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   var mayoresACien=[];
+   for (let i = 0; i < array.length; i++) {
+      if (array[i]>100) {
+         mayoresACien.push(array[i]);
+      }
+   }
+return mayoresACien;
 }
 
 /* ----------------------------------------------------------------------------------
@@ -154,6 +218,20 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   var arreglo=[];
+   for (let i = 1; i <=10; i++) {
+      num+= 2;
+      arreglo.push(num);
+      if (num===[i]) {
+         arreglo.pop();
+         breakStatement;
+         return "Se interrumpió la ejecución";
+         
+      }
+      
+   }
+   return arreglo;
+
 }
 
 function continueStatement(num) {
